@@ -12,6 +12,12 @@
 		BE22A5272AD45FE50016A4B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE22A5262AD45FE50016A4B4 /* Assets.xcassets */; };
 		BE22A52A2AD45FE50016A4B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE22A5282AD45FE50016A4B4 /* Main.storyboard */; };
 		BE22A52C2AD45FE50016A4B4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE22A52B2AD45FE50016A4B4 /* main.m */; };
+		BE7DF27F2AD5B38F00C21259 /* ComplexNumber.metal in Sources */ = {isa = PBXBuildFile; fileRef = BE7DF27E2AD5B38F00C21259 /* ComplexNumber.metal */; };
+		BE7DF2822AD5BF6000C21259 /* Compute.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7DF2812AD5BF6000C21259 /* Compute.m */; };
+		BE7DF2842AD5C01900C21259 /* Compute.metal in Sources */ = {isa = PBXBuildFile; fileRef = BE7DF2832AD5C01800C21259 /* Compute.metal */; };
+		BE7DF28C2AD5E50A00C21259 /* KeyHandlingWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7DF28B2AD5E50A00C21259 /* KeyHandlingWindowController.m */; };
+		BED378722AD463C300229B62 /* Renderer.m in Sources */ = {isa = PBXBuildFile; fileRef = BED378712AD463C300229B62 /* Renderer.m */; };
+		BED3787B2AD4CF8900229B62 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = BED3787A2AD4CF8900229B62 /* Shaders.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,18 @@
 		BE22A5292AD45FE50016A4B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BE22A52B2AD45FE50016A4B4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BE22A52D2AD45FE50016A4B4 /* shaders.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = shaders.entitlements; sourceTree = "<group>"; };
+		BE7DF27E2AD5B38F00C21259 /* ComplexNumber.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ComplexNumber.metal; sourceTree = "<group>"; };
+		BE7DF2802AD5BF6000C21259 /* Compute.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Compute.h; sourceTree = "<group>"; };
+		BE7DF2812AD5BF6000C21259 /* Compute.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Compute.m; sourceTree = "<group>"; };
+		BE7DF2832AD5C01800C21259 /* Compute.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Compute.metal; sourceTree = "<group>"; };
+		BE7DF28A2AD5E50A00C21259 /* KeyHandlingWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyHandlingWindowController.h; sourceTree = "<group>"; };
+		BE7DF28B2AD5E50A00C21259 /* KeyHandlingWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyHandlingWindowController.m; sourceTree = "<group>"; };
+		BED378702AD463C300229B62 /* Renderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Renderer.h; sourceTree = "<group>"; };
+		BED378712AD463C300229B62 /* Renderer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Renderer.m; sourceTree = "<group>"; };
+		BED378752AD4CB9400229B62 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
+		BED378772AD4CBAD00229B62 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		BED378792AD4CE8E00229B62 /* ShaderDefinitions.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; path = ShaderDefinitions.h; sourceTree = "<group>"; };
+		BED3787A2AD4CF8900229B62 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +60,7 @@
 			children = (
 				BE22A51F2AD45FE00016A4B4 /* shaders */,
 				BE22A51E2AD45FE00016A4B4 /* Products */,
+				BED378742AD4CB9400229B62 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,12 +79,39 @@
 				BE22A5212AD45FE00016A4B4 /* AppDelegate.m */,
 				BE22A5232AD45FE00016A4B4 /* ViewController.h */,
 				BE22A5242AD45FE00016A4B4 /* ViewController.m */,
+				BE7DF28A2AD5E50A00C21259 /* KeyHandlingWindowController.h */,
+				BE7DF28B2AD5E50A00C21259 /* KeyHandlingWindowController.m */,
+				BED378732AD463D300229B62 /* Renderer */,
 				BE22A5262AD45FE50016A4B4 /* Assets.xcassets */,
 				BE22A5282AD45FE50016A4B4 /* Main.storyboard */,
 				BE22A52B2AD45FE50016A4B4 /* main.m */,
 				BE22A52D2AD45FE50016A4B4 /* shaders.entitlements */,
 			);
 			path = shaders;
+			sourceTree = "<group>";
+		};
+		BED378732AD463D300229B62 /* Renderer */ = {
+			isa = PBXGroup;
+			children = (
+				BED378702AD463C300229B62 /* Renderer.h */,
+				BED378712AD463C300229B62 /* Renderer.m */,
+				BED378792AD4CE8E00229B62 /* ShaderDefinitions.h */,
+				BE7DF2802AD5BF6000C21259 /* Compute.h */,
+				BE7DF2812AD5BF6000C21259 /* Compute.m */,
+				BED3787A2AD4CF8900229B62 /* Shaders.metal */,
+				BE7DF2832AD5C01800C21259 /* Compute.metal */,
+				BE7DF27E2AD5B38F00C21259 /* ComplexNumber.metal */,
+			);
+			path = Renderer;
+			sourceTree = "<group>";
+		};
+		BED378742AD4CB9400229B62 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BED378772AD4CBAD00229B62 /* CoreGraphics.framework */,
+				BED378752AD4CB9400229B62 /* MetalKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +183,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BED378722AD463C300229B62 /* Renderer.m in Sources */,
+				BE7DF27F2AD5B38F00C21259 /* ComplexNumber.metal in Sources */,
 				BE22A5252AD45FE00016A4B4 /* ViewController.m in Sources */,
+				BE7DF2842AD5C01900C21259 /* Compute.metal in Sources */,
 				BE22A52C2AD45FE50016A4B4 /* main.m in Sources */,
 				BE22A5222AD45FE00016A4B4 /* AppDelegate.m in Sources */,
+				BE7DF28C2AD5E50A00C21259 /* KeyHandlingWindowController.m in Sources */,
+				BE7DF2822AD5BF6000C21259 /* Compute.m in Sources */,
+				BED3787B2AD4CF8900229B62 /* Shaders.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

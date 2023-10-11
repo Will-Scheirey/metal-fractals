@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "1FDD30D2-8762-4A02-BE0E-F76453028382"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            uuid = "EFF0B554-4C95-4D49-820B-0188BD620F77"
+            shouldBeEnabled = "Yes"
+            nameForDebugger = "Exceptions"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            breakpointStackSelectionBehavior = "1"
+            scope = "1"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BB6674B1-C7A8-4E72-BA8C-30BFF3B39444"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shaders/Renderer/Renderer.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "-buildRenderPipelineWithDevice:withView:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "BB6674B1-C7A8-4E72-BA8C-30BFF3B39444 - 86618d0358c5a93f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[Renderer buildRenderPipelineWithDevice:withView:]"
+                  moduleName = "shaders"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/will/Documents/Xcode%20Projects/shaders/shaders/shaders/Renderer/Renderer.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "376">
+               </Location>
+               <Location
+                  uuid = "BB6674B1-C7A8-4E72-BA8C-30BFF3B39444 - 86618d0358c5a979"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[Renderer buildRenderPipelineWithDevice:withView:]"
+                  moduleName = "shaders"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/will/Documents/Xcode%20Projects/shaders/shaders/shaders/Renderer/Renderer.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "376">
+               </Location>
+               <Location
+                  uuid = "BB6674B1-C7A8-4E72-BA8C-30BFF3B39444 - 86618d0358c5aabb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[Renderer buildRenderPipelineWithDevice:withView:]"
+                  moduleName = "shaders"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/will/Documents/Xcode%20Projects/shaders/shaders/shaders/Renderer/Renderer.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "376">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7EE2705D-A5F8-4CBA-8D89-9AAA977DF0E3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shaders/Renderer/Compute.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "-buildComputePipelineWithDevice:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7EE2705D-A5F8-4CBA-8D89-9AAA977DF0E3 - 5c1300d082095743"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[Compute buildComputePipelineWithDevice:]"
+                  moduleName = "shaders"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/will/Documents/Xcode%20Projects/shaders/shaders/shaders/Renderer/Compute.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "240">
+               </Location>
+               <Location
+                  uuid = "7EE2705D-A5F8-4CBA-8D89-9AAA977DF0E3 - 5c1300d082095a2f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[Compute buildComputePipelineWithDevice:]"
+                  moduleName = "shaders"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/will/Documents/Xcode%20Projects/shaders/shaders/shaders/Renderer/Compute.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "240">
+               </Location>
+               <Location
+                  uuid = "7EE2705D-A5F8-4CBA-8D89-9AAA977DF0E3 - 5c1300d08209578d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[Compute buildComputePipelineWithDevice:]"
+                  moduleName = "shaders"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/will/Documents/Xcode%20Projects/shaders/shaders/shaders/Renderer/Compute.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "240">
+               </Location>
+               <Location
+                  uuid = "7EE2705D-A5F8-4CBA-8D89-9AAA977DF0E3 - 5c1300d082095609"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[Compute buildComputePipelineWithDevice:]"
+                  moduleName = "shaders"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/will/Documents/Xcode%20Projects/shaders/shaders/shaders/Renderer/Compute.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "240">
+               </Location>
+               <Location
+                  uuid = "7EE2705D-A5F8-4CBA-8D89-9AAA977DF0E3 - 5c1300d08209564b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[Compute buildComputePipelineWithDevice:]"
+                  moduleName = "shaders"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/will/Documents/Xcode%20Projects/shaders/shaders/shaders/Renderer/Compute.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "240">
+               </Location>
+               <Location
+                  uuid = "7EE2705D-A5F8-4CBA-8D89-9AAA977DF0E3 - 5c1300d0820956b4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[Compute buildComputePipelineWithDevice:]"
+                  moduleName = "shaders"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/will/Documents/Xcode%20Projects/shaders/shaders/shaders/Renderer/Compute.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "240">
+               </Location>
+               <Location
+                  uuid = "7EE2705D-A5F8-4CBA-8D89-9AAA977DF0E3 - 5c1300d082095695"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[Compute buildComputePipelineWithDevice:]"
+                  moduleName = "shaders"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/will/Documents/Xcode%20Projects/shaders/shaders/shaders/Renderer/Compute.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "240">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
