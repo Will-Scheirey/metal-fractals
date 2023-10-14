@@ -39,33 +39,35 @@
     return rpswd;
 }
 
+-(void) makeVertexBufferWithSize:(CGSize)size {
+    //size.width = MAX(size.width, size.height);
+    //size.height = size.width;
+    
+    const Vertex quadVertices[] =
+    {
+        // Pixel positions, Texture coordinates
+        { {  size.width * 2,  -size.height * 2 },  { 1.f, 1.f } },
+        { { -size.width * 2,  -size.height * 2 },  { 0.f, 1.f } },
+        { { -size.width * 2,   size.height * 2 },  { 0.f, 0.f } },
+
+        { {  size.width * 2,  -size.height * 2 },  { 1.f, 1.f } },
+        { { -size.width * 2,   size.height * 2 },  { 0.f, 0.f } },
+        { {  size.width * 2,   size.height * 2 },  { 1.f, 0.f } },
+    };
+    
+    _vertexBuffer = [_device newBufferWithBytes:quadVertices length:sizeof(quadVertices) options:0];
+}
+
 - (nonnull id)initWitMTK:(nonnull MTKView *)view size:(CGSize)size {
     self = [super init];
-    
-    size.width *= 4;
-    size.height *= 4;
     
     _device = view.device;
     _commandQueue = [_device newCommandQueue];
     _commandBuffer = [_commandQueue commandBuffer];
     
+    [self makeVertexBufferWithSize:size];
+    
     self.pipelineState = [self buildRenderPipelineWithDevice:_device withView:view];
-    
-    float theSize = MAX(size.width, size.height);
-    
-    const Vertex quadVertices[] =
-    {
-        // Pixel positions, Texture coordinates
-        { {  theSize,  -theSize },  { 1.f, 1.f } },
-        { { -theSize,  -theSize },  { 0.f, 1.f } },
-        { { -theSize,   theSize },  { 0.f, 0.f } },
-
-        { {  theSize,  -theSize },  { 1.f, 1.f } },
-        { { -theSize,   theSize },  { 0.f, 0.f } },
-        { {  theSize,   theSize },  { 1.f, 0.f } },
-    };
-    
-    _vertexBuffer = [_device newBufferWithBytes:quadVertices length:sizeof(quadVertices) options:0];
     
     self.computer = [[Compute alloc] initWitMTK:view size:size];
     
@@ -105,8 +107,10 @@
 
 - (void)mtkView:(nonnull MTKView *)view drawableSizeWillChange:(CGSize)size {
     
-    _viewportSize.x = MAX(size.width, size.height);
-    _viewportSize.y = MAX(size.height, size.width);
+    _viewportSize.x = size.width;
+    _viewportSize.y = size.height;
+    [self makeVertexBufferWithSize:size];
+    [_computer updateSize:size];
 }
 
 

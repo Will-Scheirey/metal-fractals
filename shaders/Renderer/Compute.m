@@ -9,6 +9,8 @@
 #import "ShaderDefinitions.h"
 #import <MetalKit/MetalKit.h>
 
+#define TEXTURE_SIZE_MULT 1
+
 Compute* computer;
 
 // With help from https://eugenebokhan.io/introduction-to-metal-compute-part-three
@@ -53,10 +55,8 @@ Compute* computer;
     descriptor.pixelFormat = MTLPixelFormatBGRA8Unorm;
     descriptor.textureType = MTLTextureType2D;
     
-    
-    
-    descriptor.width = width/2;
-    descriptor.height = height/2;
+    descriptor.width = width * TEXTURE_SIZE_MULT;
+    descriptor.height = height * TEXTURE_SIZE_MULT;
     descriptor.usage = MTLTextureUsageShaderRead | MTLTextureUsageShaderWrite;
     
     return [_device newTextureWithDescriptor:descriptor];
@@ -156,7 +156,6 @@ Compute* computer;
     MTLSize threadGroupSize = MTLSizeMake(32, 32, 1);
     
     [_encoder setComputePipelineState:_pipelineState];
-    
     
     if(_deviceSupportsNonuniformThreadgroups)
     {

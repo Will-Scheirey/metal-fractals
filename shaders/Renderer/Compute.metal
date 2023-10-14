@@ -46,9 +46,9 @@ int doMandelbrot(ComplexNumber<float> c, const uint maxIterations, const float e
     
     while (numIter < maxIterations && z.sqmag() < escapeThreshold)
     {
-//        z = pow(z, 3) + icos(isinh(z) * c);
-//        z = z * z + ComplexNumber<float>(0.0, 0.8);
+        z = pow(z, 3) + icos(isinh(z) * c);
         z = z * z + c;
+//        z = z * z + ComplexNumber<float>(0.0, 0.8);
         numIter++;
     }
     return numIter;
@@ -86,11 +86,13 @@ kernel void mandelbrotShader(texture2d<float, access::write> output [[ texture(0
     uint width = output.get_width();
     uint height = output.get_height();
     
+    float size = min(width, height);
+    
     if(pos.x > width || pos.y > height)
         return;
     
-    float2 uv = float2((pos.x/(float)width - 0.5) * INITIAL_SCALE * (*zoom) - INITIAL_OFFSET_X + offset->x,
-                       (pos.y/(float)height - 0.5) * INITIAL_SCALE * (*zoom) - INITIAL_OFFSET_Y + offset->y);
+    float2 uv = float2((pos.x/(float)size - width/size/2) * INITIAL_SCALE * (*zoom) - INITIAL_OFFSET_X + offset->x,
+                       (pos.y/(float)size - height/size/2) * INITIAL_SCALE * (*zoom) - INITIAL_OFFSET_Y + offset->y);
     
     int numIter = doMandelbrot(ComplexNumber<float>(uv.x, uv.y), *maxIterations, *escapeThreshold);
     
