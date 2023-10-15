@@ -21,7 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BE22A51D2AD45FE00016A4B4 /* shaders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shaders.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE22A51D2AD45FE00016A4B4 /* Metal Fractals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Metal Fractals.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE22A5202AD45FE00016A4B4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BE22A5212AD45FE00016A4B4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BE22A5232AD45FE00016A4B4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -164,7 +164,7 @@
 		BE22A5142AD45FE00016A4B4 = {
 			isa = PBXGroup;
 			children = (
-				BE22A51F2AD45FE00016A4B4 /* shaders */,
+				BE22A51F2AD45FE00016A4B4 /* Metal Fractals */,
 				BE22A51E2AD45FE00016A4B4 /* Products */,
 				BED378742AD4CB9400229B62 /* Frameworks */,
 			);
@@ -173,12 +173,12 @@
 		BE22A51E2AD45FE00016A4B4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BE22A51D2AD45FE00016A4B4 /* shaders.app */,
+				BE22A51D2AD45FE00016A4B4 /* Metal Fractals.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BE22A51F2AD45FE00016A4B4 /* shaders */ = {
+		BE22A51F2AD45FE00016A4B4 /* Metal Fractals */ = {
 			isa = PBXGroup;
 			children = (
 				BE22A5202AD45FE00016A4B4 /* AppDelegate.h */,
@@ -193,7 +193,7 @@
 				BE22A52B2AD45FE50016A4B4 /* main.m */,
 				BE22A52D2AD45FE50016A4B4 /* shaders.entitlements */,
 			);
-			path = shaders;
+			path = "Metal Fractals";
 			sourceTree = "<group>";
 		};
 		BED378732AD463D300229B62 /* Renderer */ = {
@@ -337,9 +337,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BE22A51C2AD45FE00016A4B4 /* shaders */ = {
+		BE22A51C2AD45FE00016A4B4 /* Metal Fractals */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BE22A5302AD45FE50016A4B4 /* Build configuration list for PBXNativeTarget "shaders" */;
+			buildConfigurationList = BE22A5302AD45FE50016A4B4 /* Build configuration list for PBXNativeTarget "Metal Fractals" */;
 			buildPhases = (
 				BE22A5192AD45FE00016A4B4 /* Sources */,
 				BE22A51A2AD45FE00016A4B4 /* Frameworks */,
@@ -349,9 +349,9 @@
 			);
 			dependencies = (
 			);
-			name = shaders;
+			name = "Metal Fractals";
 			productName = shaders;
-			productReference = BE22A51D2AD45FE00016A4B4 /* shaders.app */;
+			productReference = BE22A51D2AD45FE00016A4B4 /* Metal Fractals.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -368,7 +368,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BE22A5182AD45FE00016A4B4 /* Build configuration list for PBXProject "shaders" */;
+			buildConfigurationList = BE22A5182AD45FE00016A4B4 /* Build configuration list for PBXProject "Metal Fractals" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -381,7 +381,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BE22A51C2AD45FE00016A4B4 /* shaders */,
+				BE22A51C2AD45FE00016A4B4 /* Metal Fractals */,
 			);
 		};
 /* End PBXProject section */
@@ -599,7 +599,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BE22A5182AD45FE00016A4B4 /* Build configuration list for PBXProject "shaders" */ = {
+		BE22A5182AD45FE00016A4B4 /* Build configuration list for PBXProject "Metal Fractals" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BE22A52E2AD45FE50016A4B4 /* Debug */,
@@ -608,7 +608,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BE22A5302AD45FE50016A4B4 /* Build configuration list for PBXNativeTarget "shaders" */ = {
+		BE22A5302AD45FE50016A4B4 /* Build configuration list for PBXNativeTarget "Metal Fractals" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BE22A5312AD45FE50016A4B4 /* Debug */,
