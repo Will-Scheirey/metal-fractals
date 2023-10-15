@@ -17,7 +17,7 @@
 		BE7DF2842AD5C01900C21259 /* Compute.metal in Sources */ = {isa = PBXBuildFile; fileRef = BE7DF2832AD5C01800C21259 /* Compute.metal */; };
 		BE7DF28C2AD5E50A00C21259 /* KeyHandlingWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7DF28B2AD5E50A00C21259 /* KeyHandlingWindowController.m */; };
 		BED378722AD463C300229B62 /* Renderer.m in Sources */ = {isa = PBXBuildFile; fileRef = BED378712AD463C300229B62 /* Renderer.m */; };
-		BED3787B2AD4CF8900229B62 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = BED3787A2AD4CF8900229B62 /* Shaders.metal */; };
+		BEDCDBC82ADBB7D100EE296E /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = BED3787A2AD4CF8900229B62 /* Shaders.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +42,112 @@
 		BED378772AD4CBAD00229B62 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		BED378792AD4CE8E00229B62 /* ShaderDefinitions.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; path = ShaderDefinitions.h; sourceTree = "<group>"; };
 		BED3787A2AD4CF8900229B62 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		BEDCDAF42ADBB45B00EE296E /* IDL_CB-BrBG.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_CB-BrBG.metal"; sourceTree = "<group>"; };
+		BEDCDAF52ADBB45B00EE296E /* IDL_CB-YIGn.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_CB-YIGn.metal"; sourceTree = "<group>"; };
+		BEDCDAF62ADBB45B00EE296E /* IDL_Blue_Waves.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = IDL_Blue_Waves.metal; sourceTree = "<group>"; };
+		BEDCDAF72ADBB45B00EE296E /* IDL_CB-YIGnBu.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_CB-YIGnBu.metal"; sourceTree = "<group>"; };
+		BEDCDAF82ADBB45B00EE296E /* MATLAB_summer.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MATLAB_summer.metal; sourceTree = "<group>"; };
+		BEDCDAF92ADBB45B00EE296E /* MATLAB_hot.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MATLAB_hot.metal; sourceTree = "<group>"; };
+		BEDCDAFA2ADBB45B00EE296E /* IDL_CB-Blues.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_CB-Blues.metal"; sourceTree = "<group>"; };
+		BEDCDAFB2ADBB45B00EE296E /* IDL_Blue-Red.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_Blue-Red.metal"; sourceTree = "<group>"; };
+		BEDCDAFC2ADBB45B00EE296E /* IDL_Mac_Style.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = IDL_Mac_Style.metal; sourceTree = "<group>"; };
+		BEDCDAFD2ADBB45B00EE296E /* transform_apricot.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = transform_apricot.metal; sourceTree = "<group>"; };
+		BEDCDAFE2ADBB45B00EE296E /* IDL_Stern_Special.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = IDL_Stern_Special.metal; sourceTree = "<group>"; };
+		BEDCDAFF2ADBB45B00EE296E /* MATLAB_spring.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MATLAB_spring.metal; sourceTree = "<group>"; };
+		BEDCDB002ADBB45B00EE296E /* IDL_CB-Pastel2.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_CB-Pastel2.metal"; sourceTree = "<group>"; };
+		BEDCDB012ADBB45B00EE296E /* MATLAB_jet.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MATLAB_jet.metal; sourceTree = "<group>"; };
+		BEDCDB022ADBB45B00EE296E /* transform_saturn.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = transform_saturn.metal; sourceTree = "<group>"; };
+		BEDCDB032ADBB45B00EE296E /* IDL_CB-PRGn.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_CB-PRGn.metal"; sourceTree = "<group>"; };
+		BEDCDB042ADBB45B00EE296E /* IDL_CB-Set3.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_CB-Set3.metal"; sourceTree = "<group>"; };
+		BEDCDB052ADBB45B00EE296E /* transform_peanut_butter_and_jerry.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = transform_peanut_butter_and_jerry.metal; sourceTree = "<group>"; };
+		BEDCDB062ADBB45B00EE296E /* IDL_Red-Purple.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_Red-Purple.metal"; sourceTree = "<group>"; };
+		BEDCDB072ADBB45B00EE296E /* MATLAB_autumn.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MATLAB_autumn.metal; sourceTree = "<group>"; };
+		BEDCDB082ADBB45B00EE296E /* IDL_CB-Greens.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_CB-Greens.metal"; sourceTree = "<group>"; };
+		BEDCDB092ADBB45B00EE296E /* IDL_CB-RdGy.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_CB-RdGy.metal"; sourceTree = "<group>"; };
+		BEDCDB0A2ADBB45B00EE296E /* IDL_CB-Set1.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_CB-Set1.metal"; sourceTree = "<group>"; };
+		BEDCDB0B2ADBB45B00EE296E /* IDL_Ocean.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = IDL_Ocean.metal; sourceTree = "<group>"; };
+		BEDCDB0C2ADBB45B00EE296E /* IDL_CB-RdBu.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_CB-RdBu.metal"; sourceTree = "<group>"; };
+		BEDCDB0D2ADBB45B00EE296E /* IDL_Pastels.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = IDL_Pastels.metal; sourceTree = "<group>"; };
+		BEDCDB0E2ADBB45B00EE296E /* IDL_CB-PuBu.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_CB-PuBu.metal"; sourceTree = "<group>"; };
+		BEDCDB0F2ADBB45B00EE296E /* IDL_Prism.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = IDL_Prism.metal; sourceTree = "<group>"; };
+		BEDCDB102ADBB45B00EE296E /* IDL_Purple-Red+Stripes.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_Purple-Red+Stripes.metal"; sourceTree = "<group>"; };
+		BEDCDB112ADBB45B00EE296E /* IDL_CB-Oranges.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_CB-Oranges.metal"; sourceTree = "<group>"; };
+		BEDCDB122ADBB45B00EE296E /* IDL_Rainbow+White.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_Rainbow+White.metal"; sourceTree = "<group>"; };
+		BEDCDB132ADBB45B00EE296E /* transform_morning_glory.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = transform_morning_glory.metal; sourceTree = "<group>"; };
+		BEDCDB142ADBB45B00EE296E /* transform_space.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = transform_space.metal; sourceTree = "<group>"; };
+		BEDCDB152ADBB45B00EE296E /* IDL_16_Level.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = IDL_16_Level.metal; sourceTree = "<group>"; };
+		BEDCDB162ADBB45B00EE296E /* IDL_CB-GnBu.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_CB-GnBu.metal"; sourceTree = "<group>"; };
+		BEDCDB172ADBB45B00EE296E /* IDL_CB-Accent.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_CB-Accent.metal"; sourceTree = "<group>"; };
+		BEDCDB182ADBB45B00EE296E /* IDL_CB-OrRd.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_CB-OrRd.metal"; sourceTree = "<group>"; };
+		BEDCDB192ADBB45B00EE296E /* transform_lava_waves.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = transform_lava_waves.metal; sourceTree = "<group>"; };
+		BEDCDB1A2ADBB45B00EE296E /* IDL_CB-Purples.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_CB-Purples.metal"; sourceTree = "<group>"; };
+		BEDCDB1B2ADBB45B00EE296E /* IDL_CB-Greys.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_CB-Greys.metal"; sourceTree = "<group>"; };
+		BEDCDB1C2ADBB45B00EE296E /* IDL_CB-BuPu.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_CB-BuPu.metal"; sourceTree = "<group>"; };
+		BEDCDB1D2ADBB45B00EE296E /* IDL_CB-PiYG.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_CB-PiYG.metal"; sourceTree = "<group>"; };
+		BEDCDB1E2ADBB45B00EE296E /* MATLAB_parula.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MATLAB_parula.metal; sourceTree = "<group>"; };
+		BEDCDB1F2ADBB45B00EE296E /* MATLAB_hsv.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MATLAB_hsv.metal; sourceTree = "<group>"; };
+		BEDCDB202ADBB45B00EE296E /* transform_seismic.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = transform_seismic.metal; sourceTree = "<group>"; };
+		BEDCDB212ADBB45B00EE296E /* MATLAB_winter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MATLAB_winter.metal; sourceTree = "<group>"; };
+		BEDCDB222ADBB45B00EE296E /* IDL_Blue-Red_2.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_Blue-Red_2.metal"; sourceTree = "<group>"; };
+		BEDCDB232ADBB45B00EE296E /* IDL_CB-RdPu.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_CB-RdPu.metal"; sourceTree = "<group>"; };
+		BEDCDB242ADBB45B00EE296E /* IDL_CB-Pastel1.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_CB-Pastel1.metal"; sourceTree = "<group>"; };
+		BEDCDB252ADBB45B00EE296E /* transform_carnation.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = transform_carnation.metal; sourceTree = "<group>"; };
+		BEDCDB262ADBB45B00EE296E /* transform_rose.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = transform_rose.metal; sourceTree = "<group>"; };
+		BEDCDB272ADBB45B00EE296E /* IDL_CB-RdYiBu.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_CB-RdYiBu.metal"; sourceTree = "<group>"; };
+		BEDCDB282ADBB45B00EE296E /* IDL_Waves.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = IDL_Waves.metal; sourceTree = "<group>"; };
+		BEDCDB292ADBB45B00EE296E /* IDL_CB-Reds.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_CB-Reds.metal"; sourceTree = "<group>"; };
+		BEDCDB2A2ADBB45B00EE296E /* IDL_Green-White_Linear.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_Green-White_Linear.metal"; sourceTree = "<group>"; };
+		BEDCDB2B2ADBB45B00EE296E /* IDL_Green-Pink.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_Green-Pink.metal"; sourceTree = "<group>"; };
+		BEDCDB2C2ADBB45B00EE296E /* IDL_Red_Temperature.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = IDL_Red_Temperature.metal; sourceTree = "<group>"; };
+		BEDCDB2D2ADBB45B00EE296E /* IDL_CB-Set2.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_CB-Set2.metal"; sourceTree = "<group>"; };
+		BEDCDB2E2ADBB45B00EE296E /* IDL_Blue-Green-Red-Yellow.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_Blue-Green-Red-Yellow.metal"; sourceTree = "<group>"; };
+		BEDCDB2F2ADBB45B00EE296E /* IDL_Hue_Sat_Lightness_1.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = IDL_Hue_Sat_Lightness_1.metal; sourceTree = "<group>"; };
+		BEDCDB302ADBB45B00EE296E /* IDL_CB-Dark2.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_CB-Dark2.metal"; sourceTree = "<group>"; };
+		BEDCDB312ADBB45B00EE296E /* IDL_CB-RdYiGn.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_CB-RdYiGn.metal"; sourceTree = "<group>"; };
+		BEDCDB322ADBB45B00EE296E /* IDL_Rainbow.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = IDL_Rainbow.metal; sourceTree = "<group>"; };
+		BEDCDB332ADBB45B00EE296E /* IDL_CB-Spectral.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_CB-Spectral.metal"; sourceTree = "<group>"; };
+		BEDCDB342ADBB45B00EE296E /* transform_grayscale_banded.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = transform_grayscale_banded.metal; sourceTree = "<group>"; };
+		BEDCDB352ADBB45B00EE296E /* colormaps.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = colormaps.metal; sourceTree = "<group>"; };
+		BEDCDB362ADBB45B00EE296E /* IDL_Beach.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = IDL_Beach.metal; sourceTree = "<group>"; };
+		BEDCDB372ADBB45B00EE296E /* transform_rainbow.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = transform_rainbow.metal; sourceTree = "<group>"; };
+		BEDCDB382ADBB45B00EE296E /* gnuplot.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = gnuplot.metal; sourceTree = "<group>"; };
+		BEDCDB392ADBB45B00EE296E /* IDL_Plasma.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = IDL_Plasma.metal; sourceTree = "<group>"; };
+		BEDCDB3A2ADBB45B00EE296E /* transform_supernova.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = transform_supernova.metal; sourceTree = "<group>"; };
+		BEDCDB3B2ADBB45B00EE296E /* IDL_Hue_Sat_Value_2.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = IDL_Hue_Sat_Value_2.metal; sourceTree = "<group>"; };
+		BEDCDB3C2ADBB45B00EE296E /* IDL_Green-Red-Blue-White.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_Green-Red-Blue-White.metal"; sourceTree = "<group>"; };
+		BEDCDB3D2ADBB45B00EE296E /* IDL_CB-PuBuGn.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_CB-PuBuGn.metal"; sourceTree = "<group>"; };
+		BEDCDB3E2ADBB45B00EE296E /* IDL_Rainbow_2.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = IDL_Rainbow_2.metal; sourceTree = "<group>"; };
+		BEDCDB3F2ADBB45B00EE296E /* transform_purple_haze.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = transform_purple_haze.metal; sourceTree = "<group>"; };
+		BEDCDB402ADBB45B00EE296E /* IDL_Haze.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = IDL_Haze.metal; sourceTree = "<group>"; };
+		BEDCDB412ADBB45B00EE296E /* IDL_CB-PuOr.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_CB-PuOr.metal"; sourceTree = "<group>"; };
+		BEDCDB422ADBB45B00EE296E /* transform_hot_metal.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = transform_hot_metal.metal; sourceTree = "<group>"; };
+		BEDCDB432ADBB45B00EE296E /* IDL_Peppermint.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = IDL_Peppermint.metal; sourceTree = "<group>"; };
+		BEDCDB442ADBB45B00EE296E /* MATLAB_cool.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MATLAB_cool.metal; sourceTree = "<group>"; };
+		BEDCDB452ADBB45B00EE296E /* IDL_Eos_B.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = IDL_Eos_B.metal; sourceTree = "<group>"; };
+		BEDCDB462ADBB45B00EE296E /* IDL_CB-Paired.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_CB-Paired.metal"; sourceTree = "<group>"; };
+		BEDCDB472ADBB45B00EE296E /* MATLAB_pink.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MATLAB_pink.metal; sourceTree = "<group>"; };
+		BEDCDB482ADBB45B00EE296E /* IDL_Blue-Pastel-Red.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_Blue-Pastel-Red.metal"; sourceTree = "<group>"; };
+		BEDCDB492ADBB45B00EE296E /* MATLAB_bone.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MATLAB_bone.metal; sourceTree = "<group>"; };
+		BEDCDB4A2ADBB45B00EE296E /* IDL_Steps.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = IDL_Steps.metal; sourceTree = "<group>"; };
+		BEDCDB4B2ADBB45B00EE296E /* IDL_Blue-White_Linear.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_Blue-White_Linear.metal"; sourceTree = "<group>"; };
+		BEDCDB4C2ADBB45B00EE296E /* IDL_Rainbow_18.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = IDL_Rainbow_18.metal; sourceTree = "<group>"; };
+		BEDCDB4D2ADBB45B00EE296E /* IDL_Hue_Sat_Lightness_2.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = IDL_Hue_Sat_Lightness_2.metal; sourceTree = "<group>"; };
+		BEDCDB4E2ADBB45B00EE296E /* IDL_CB-YIOrBr.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_CB-YIOrBr.metal"; sourceTree = "<group>"; };
+		BEDCDB4F2ADBB45B00EE296E /* IDL_Standard_Gamma-II.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_Standard_Gamma-II.metal"; sourceTree = "<group>"; };
+		BEDCDB502ADBB45B00EE296E /* IDL_Hue_Sat_Value_1.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = IDL_Hue_Sat_Value_1.metal; sourceTree = "<group>"; };
+		BEDCDB512ADBB45B00EE296E /* MATLAB_copper.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MATLAB_copper.metal; sourceTree = "<group>"; };
+		BEDCDB522ADBB45B00EE296E /* transform_malachite.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = transform_malachite.metal; sourceTree = "<group>"; };
+		BEDCDB532ADBB45B00EE296E /* IDL_Volcano.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = IDL_Volcano.metal; sourceTree = "<group>"; };
+		BEDCDB542ADBB45B00EE296E /* transform_ether.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = transform_ether.metal; sourceTree = "<group>"; };
+		BEDCDB552ADBB45B00EE296E /* IDL_Hardcandy.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = IDL_Hardcandy.metal; sourceTree = "<group>"; };
+		BEDCDB562ADBB45B00EE296E /* IDL_Nature.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = IDL_Nature.metal; sourceTree = "<group>"; };
+		BEDCDB572ADBB45B00EE296E /* IDL_Rainbow+Black.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_Rainbow+Black.metal"; sourceTree = "<group>"; };
+		BEDCDB582ADBB45B00EE296E /* IDL_Green-White_Exponential.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_Green-White_Exponential.metal"; sourceTree = "<group>"; };
+		BEDCDB592ADBB45B00EE296E /* IDL_Black-White_Linear.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_Black-White_Linear.metal"; sourceTree = "<group>"; };
+		BEDCDB5A2ADBB45B00EE296E /* IDL_CB-BuGn.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_CB-BuGn.metal"; sourceTree = "<group>"; };
+		BEDCDB5B2ADBB45B00EE296E /* IDL_CB-PuRd.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "IDL_CB-PuRd.metal"; sourceTree = "<group>"; };
+		BEDCDB5C2ADBB45B00EE296E /* kbinani_altitude.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = kbinani_altitude.metal; sourceTree = "<group>"; };
+		BEDCDB5D2ADBB45B00EE296E /* IDL_Eos_A.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = IDL_Eos_A.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +199,7 @@
 		BED378732AD463D300229B62 /* Renderer */ = {
 			isa = PBXGroup;
 			children = (
+				BEDCDAF32ADBB45B00EE296E /* Colormaps */,
 				BED378702AD463C300229B62 /* Renderer.h */,
 				BED378712AD463C300229B62 /* Renderer.m */,
 				BED378792AD4CE8E00229B62 /* ShaderDefinitions.h */,
@@ -112,6 +219,119 @@
 				BED378752AD4CB9400229B62 /* MetalKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BEDCDAF32ADBB45B00EE296E /* Colormaps */ = {
+			isa = PBXGroup;
+			children = (
+				BEDCDAF42ADBB45B00EE296E /* IDL_CB-BrBG.metal */,
+				BEDCDAF52ADBB45B00EE296E /* IDL_CB-YIGn.metal */,
+				BEDCDAF62ADBB45B00EE296E /* IDL_Blue_Waves.metal */,
+				BEDCDAF72ADBB45B00EE296E /* IDL_CB-YIGnBu.metal */,
+				BEDCDAF82ADBB45B00EE296E /* MATLAB_summer.metal */,
+				BEDCDAF92ADBB45B00EE296E /* MATLAB_hot.metal */,
+				BEDCDAFA2ADBB45B00EE296E /* IDL_CB-Blues.metal */,
+				BEDCDAFB2ADBB45B00EE296E /* IDL_Blue-Red.metal */,
+				BEDCDAFC2ADBB45B00EE296E /* IDL_Mac_Style.metal */,
+				BEDCDAFD2ADBB45B00EE296E /* transform_apricot.metal */,
+				BEDCDAFE2ADBB45B00EE296E /* IDL_Stern_Special.metal */,
+				BEDCDAFF2ADBB45B00EE296E /* MATLAB_spring.metal */,
+				BEDCDB002ADBB45B00EE296E /* IDL_CB-Pastel2.metal */,
+				BEDCDB012ADBB45B00EE296E /* MATLAB_jet.metal */,
+				BEDCDB022ADBB45B00EE296E /* transform_saturn.metal */,
+				BEDCDB032ADBB45B00EE296E /* IDL_CB-PRGn.metal */,
+				BEDCDB042ADBB45B00EE296E /* IDL_CB-Set3.metal */,
+				BEDCDB052ADBB45B00EE296E /* transform_peanut_butter_and_jerry.metal */,
+				BEDCDB062ADBB45B00EE296E /* IDL_Red-Purple.metal */,
+				BEDCDB072ADBB45B00EE296E /* MATLAB_autumn.metal */,
+				BEDCDB082ADBB45B00EE296E /* IDL_CB-Greens.metal */,
+				BEDCDB092ADBB45B00EE296E /* IDL_CB-RdGy.metal */,
+				BEDCDB0A2ADBB45B00EE296E /* IDL_CB-Set1.metal */,
+				BEDCDB0B2ADBB45B00EE296E /* IDL_Ocean.metal */,
+				BEDCDB0C2ADBB45B00EE296E /* IDL_CB-RdBu.metal */,
+				BEDCDB0D2ADBB45B00EE296E /* IDL_Pastels.metal */,
+				BEDCDB0E2ADBB45B00EE296E /* IDL_CB-PuBu.metal */,
+				BEDCDB0F2ADBB45B00EE296E /* IDL_Prism.metal */,
+				BEDCDB102ADBB45B00EE296E /* IDL_Purple-Red+Stripes.metal */,
+				BEDCDB112ADBB45B00EE296E /* IDL_CB-Oranges.metal */,
+				BEDCDB122ADBB45B00EE296E /* IDL_Rainbow+White.metal */,
+				BEDCDB132ADBB45B00EE296E /* transform_morning_glory.metal */,
+				BEDCDB142ADBB45B00EE296E /* transform_space.metal */,
+				BEDCDB152ADBB45B00EE296E /* IDL_16_Level.metal */,
+				BEDCDB162ADBB45B00EE296E /* IDL_CB-GnBu.metal */,
+				BEDCDB172ADBB45B00EE296E /* IDL_CB-Accent.metal */,
+				BEDCDB182ADBB45B00EE296E /* IDL_CB-OrRd.metal */,
+				BEDCDB192ADBB45B00EE296E /* transform_lava_waves.metal */,
+				BEDCDB1A2ADBB45B00EE296E /* IDL_CB-Purples.metal */,
+				BEDCDB1B2ADBB45B00EE296E /* IDL_CB-Greys.metal */,
+				BEDCDB1C2ADBB45B00EE296E /* IDL_CB-BuPu.metal */,
+				BEDCDB1D2ADBB45B00EE296E /* IDL_CB-PiYG.metal */,
+				BEDCDB1E2ADBB45B00EE296E /* MATLAB_parula.metal */,
+				BEDCDB1F2ADBB45B00EE296E /* MATLAB_hsv.metal */,
+				BEDCDB202ADBB45B00EE296E /* transform_seismic.metal */,
+				BEDCDB212ADBB45B00EE296E /* MATLAB_winter.metal */,
+				BEDCDB222ADBB45B00EE296E /* IDL_Blue-Red_2.metal */,
+				BEDCDB232ADBB45B00EE296E /* IDL_CB-RdPu.metal */,
+				BEDCDB242ADBB45B00EE296E /* IDL_CB-Pastel1.metal */,
+				BEDCDB252ADBB45B00EE296E /* transform_carnation.metal */,
+				BEDCDB262ADBB45B00EE296E /* transform_rose.metal */,
+				BEDCDB272ADBB45B00EE296E /* IDL_CB-RdYiBu.metal */,
+				BEDCDB282ADBB45B00EE296E /* IDL_Waves.metal */,
+				BEDCDB292ADBB45B00EE296E /* IDL_CB-Reds.metal */,
+				BEDCDB2A2ADBB45B00EE296E /* IDL_Green-White_Linear.metal */,
+				BEDCDB2B2ADBB45B00EE296E /* IDL_Green-Pink.metal */,
+				BEDCDB2C2ADBB45B00EE296E /* IDL_Red_Temperature.metal */,
+				BEDCDB2D2ADBB45B00EE296E /* IDL_CB-Set2.metal */,
+				BEDCDB2E2ADBB45B00EE296E /* IDL_Blue-Green-Red-Yellow.metal */,
+				BEDCDB2F2ADBB45B00EE296E /* IDL_Hue_Sat_Lightness_1.metal */,
+				BEDCDB302ADBB45B00EE296E /* IDL_CB-Dark2.metal */,
+				BEDCDB312ADBB45B00EE296E /* IDL_CB-RdYiGn.metal */,
+				BEDCDB322ADBB45B00EE296E /* IDL_Rainbow.metal */,
+				BEDCDB332ADBB45B00EE296E /* IDL_CB-Spectral.metal */,
+				BEDCDB342ADBB45B00EE296E /* transform_grayscale_banded.metal */,
+				BEDCDB352ADBB45B00EE296E /* colormaps.metal */,
+				BEDCDB362ADBB45B00EE296E /* IDL_Beach.metal */,
+				BEDCDB372ADBB45B00EE296E /* transform_rainbow.metal */,
+				BEDCDB382ADBB45B00EE296E /* gnuplot.metal */,
+				BEDCDB392ADBB45B00EE296E /* IDL_Plasma.metal */,
+				BEDCDB3A2ADBB45B00EE296E /* transform_supernova.metal */,
+				BEDCDB3B2ADBB45B00EE296E /* IDL_Hue_Sat_Value_2.metal */,
+				BEDCDB3C2ADBB45B00EE296E /* IDL_Green-Red-Blue-White.metal */,
+				BEDCDB3D2ADBB45B00EE296E /* IDL_CB-PuBuGn.metal */,
+				BEDCDB3E2ADBB45B00EE296E /* IDL_Rainbow_2.metal */,
+				BEDCDB3F2ADBB45B00EE296E /* transform_purple_haze.metal */,
+				BEDCDB402ADBB45B00EE296E /* IDL_Haze.metal */,
+				BEDCDB412ADBB45B00EE296E /* IDL_CB-PuOr.metal */,
+				BEDCDB422ADBB45B00EE296E /* transform_hot_metal.metal */,
+				BEDCDB432ADBB45B00EE296E /* IDL_Peppermint.metal */,
+				BEDCDB442ADBB45B00EE296E /* MATLAB_cool.metal */,
+				BEDCDB452ADBB45B00EE296E /* IDL_Eos_B.metal */,
+				BEDCDB462ADBB45B00EE296E /* IDL_CB-Paired.metal */,
+				BEDCDB472ADBB45B00EE296E /* MATLAB_pink.metal */,
+				BEDCDB482ADBB45B00EE296E /* IDL_Blue-Pastel-Red.metal */,
+				BEDCDB492ADBB45B00EE296E /* MATLAB_bone.metal */,
+				BEDCDB4A2ADBB45B00EE296E /* IDL_Steps.metal */,
+				BEDCDB4B2ADBB45B00EE296E /* IDL_Blue-White_Linear.metal */,
+				BEDCDB4C2ADBB45B00EE296E /* IDL_Rainbow_18.metal */,
+				BEDCDB4D2ADBB45B00EE296E /* IDL_Hue_Sat_Lightness_2.metal */,
+				BEDCDB4E2ADBB45B00EE296E /* IDL_CB-YIOrBr.metal */,
+				BEDCDB4F2ADBB45B00EE296E /* IDL_Standard_Gamma-II.metal */,
+				BEDCDB502ADBB45B00EE296E /* IDL_Hue_Sat_Value_1.metal */,
+				BEDCDB512ADBB45B00EE296E /* MATLAB_copper.metal */,
+				BEDCDB522ADBB45B00EE296E /* transform_malachite.metal */,
+				BEDCDB532ADBB45B00EE296E /* IDL_Volcano.metal */,
+				BEDCDB542ADBB45B00EE296E /* transform_ether.metal */,
+				BEDCDB552ADBB45B00EE296E /* IDL_Hardcandy.metal */,
+				BEDCDB562ADBB45B00EE296E /* IDL_Nature.metal */,
+				BEDCDB572ADBB45B00EE296E /* IDL_Rainbow+Black.metal */,
+				BEDCDB582ADBB45B00EE296E /* IDL_Green-White_Exponential.metal */,
+				BEDCDB592ADBB45B00EE296E /* IDL_Black-White_Linear.metal */,
+				BEDCDB5A2ADBB45B00EE296E /* IDL_CB-BuGn.metal */,
+				BEDCDB5B2ADBB45B00EE296E /* IDL_CB-PuRd.metal */,
+				BEDCDB5C2ADBB45B00EE296E /* kbinani_altitude.metal */,
+				BEDCDB5D2ADBB45B00EE296E /* IDL_Eos_A.metal */,
+			);
+			path = Colormaps;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +403,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEDCDBC82ADBB7D100EE296E /* Shaders.metal in Sources */,
 				BED378722AD463C300229B62 /* Renderer.m in Sources */,
 				BE7DF27F2AD5B38F00C21259 /* ComplexNumber.metal in Sources */,
 				BE22A5252AD45FE00016A4B4 /* ViewController.m in Sources */,
@@ -191,7 +412,6 @@
 				BE22A5222AD45FE00016A4B4 /* AppDelegate.m in Sources */,
 				BE7DF28C2AD5E50A00C21259 /* KeyHandlingWindowController.m in Sources */,
 				BE7DF2822AD5BF6000C21259 /* Compute.m in Sources */,
-				BED3787B2AD4CF8900229B62 /* Shaders.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

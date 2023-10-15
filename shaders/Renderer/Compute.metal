@@ -6,6 +6,8 @@
 //
 
 #include <metal_stdlib>
+
+#include "Colormaps/colormaps.metal"
 #include "ComplexNumber.metal"
 
 #define INITIAL_OFFSET_Y 0
@@ -17,7 +19,6 @@
 #define ESCAPE_THRESHOLD 4.0
 
 using namespace metal;
-
 
 float3 HUEtoRGB(float H)
 {
@@ -39,40 +40,57 @@ struct VertexOut {
     float4 pos [[position]];
 };
 
-int doMandelbrot(ComplexNumber<float> c, const uint maxIterations, const float escapeThreshold)
-{
-    uint numIter = 0;
-    ComplexNumber<float> z(c.a, c.b);
-    
-    while (numIter < maxIterations && z.sqmag() < escapeThreshold)
-    {
-        z = pow(z, 3) + icos(isinh(z) * c);
-        z = z * z + c;
-//        z = z * z + ComplexNumber<float>(0.0, 0.8);
-        numIter++;
-    }
-    return numIter;
-}
-
 float3 palette(int i, const uint maxIterations)
 {
     
     
-//    return float3(1 - (float)i/maxIterations, 1 - (float)i/maxIterations, 1 - (float)i/maxIterations);
+    return float3(1 - (float)i/maxIterations, 1 - (float)i/maxIterations, 1 - (float)i/maxIterations);
     
     if(i == (int)maxIterations)
         return float3(0, 0, 0);
     
-//    return HSLtoRGB(float3((float)i/maxIterations, 0.5, 0.5));
+    return HSLtoRGB(float3((float)i/maxIterations, 0.5, 0.5));
     
     float t = (float)i/maxIterations;
     
     float3 a = float3(0.5, 0.5, 0.5);
     float3 b = float3(0.5, 0.5, 0.5);
     float3 c = float3(1.0, 1.0, 1.0);
-    float3 d = float3(0.263, 0.416, 0.557);
+    float3 d = float3(0.163, 0.316, 0.057);
 
-    return a + b * cos(6.28318*(c*t+d));
+    return a + b * cos(6.28318*(c*t + d));
+}
+
+float3 doMandelbrot(ComplexNumber<float> c, const uint maxIterations, const float escapeThreshold)
+{
+    uint numIter = 0;
+    ComplexNumber<float> z(c.a, c.b);
+    
+    while (numIter < maxIterations && z.sqmag() < escapeThreshold)
+    {
+        z = z * z + c;
+//        z = pow(z, 3) + icos(isinh(z) * c);
+//        z = z * z + ComplexNumber<float>(0.0, 0.8);
+        numIter++;
+    }
+    
+//    return palette(numIter, maxIterations);
+    
+    
+    if(numIter == maxIterations)
+        return float3(0);
+    
+    
+    
+    float smoothed = log2(log2(z.a * z.a + z.b * z.b) / 2.0) / log(2.0);
+    
+    float n = numIter + 1 - smoothed;
+    
+    float i = n / (float)maxIterations;
+    
+    return colormap::MATLAB::copper::colormap(i).xyz;
+    
+    return float3(HSLtoRGB(float3(i, 0.5, 0.5))) ;
 }
 
 kernel void mandelbrotShader(texture2d<float, access::write> output [[ texture(0) ]],
@@ -93,8 +111,6 @@ kernel void mandelbrotShader(texture2d<float, access::write> output [[ texture(0
     
     float2 uv = float2((pos.x/(float)size - width/size/2) * INITIAL_SCALE * (*zoom) - INITIAL_OFFSET_X + offset->x,
                        (pos.y/(float)size - height/size/2) * INITIAL_SCALE * (*zoom) - INITIAL_OFFSET_Y + offset->y);
-    
-    int numIter = doMandelbrot(ComplexNumber<float>(uv.x, uv.y), *maxIterations, *escapeThreshold);
-    
-    output.write(float4(palette(numIter, *maxIterations), 1), pos);
+        
+    output.write(float4(doMandelbrot(ComplexNumber<float>(uv.x, uv.y), *maxIterations, *escapeThreshold), 1), pos);
 }
