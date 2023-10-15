@@ -40,27 +40,6 @@ struct VertexOut {
     float4 pos [[position]];
 };
 
-float3 palette(int i, const uint maxIterations)
-{
-    
-    
-    return float3(1 - (float)i/maxIterations, 1 - (float)i/maxIterations, 1 - (float)i/maxIterations);
-    
-    if(i == (int)maxIterations)
-        return float3(0, 0, 0);
-    
-    return HSLtoRGB(float3((float)i/maxIterations, 0.5, 0.5));
-    
-    float t = (float)i/maxIterations;
-    
-    float3 a = float3(0.5, 0.5, 0.5);
-    float3 b = float3(0.5, 0.5, 0.5);
-    float3 c = float3(1.0, 1.0, 1.0);
-    float3 d = float3(0.163, 0.316, 0.057);
-
-    return a + b * cos(6.28318*(c*t + d));
-}
-
 float3 doMandelbrot(ComplexNumber<float> c, const uint maxIterations, const float escapeThreshold)
 {
     uint numIter = 0;
@@ -74,9 +53,6 @@ float3 doMandelbrot(ComplexNumber<float> c, const uint maxIterations, const floa
         numIter++;
     }
     
-//    return palette(numIter, maxIterations);
-    
-    
     if(numIter == maxIterations)
         return float3(0);
     
@@ -89,8 +65,6 @@ float3 doMandelbrot(ComplexNumber<float> c, const uint maxIterations, const floa
     float i = n / (float)maxIterations;
     
     return colormap::MATLAB::copper::colormap(i).xyz;
-    
-    return float3(HSLtoRGB(float3(i, 0.5, 0.5))) ;
 }
 
 kernel void mandelbrotShader(texture2d<float, access::write> output [[ texture(0) ]],
