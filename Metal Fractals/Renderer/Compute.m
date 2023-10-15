@@ -7,6 +7,7 @@
 
 #import "Compute.h"
 #import "ShaderDefinitions.h"
+#include <Carbon/Carbon.h>
 #import <MetalKit/MetalKit.h>
 #import <CoreImage/CoreImage.h>
 #import <UniformTypeIdentifiers/UniformTypeIdentifiers.h>
@@ -32,6 +33,8 @@ Compute* computer;
     float offsetY;
     float maxIterMult;
     float escapeThresholdMult;
+    bool invertColormap;
+    float colormapShift;
     
     MTLPixelFormat _format;
     
@@ -88,6 +91,8 @@ Compute* computer;
     offsetY = 0;
     maxIterMult = 1;
     escapeThresholdMult = 1;
+    invertColormap = false;
+    colormapShift = 0;
     
     _keysPressed = [NSMutableSet new];
     
@@ -97,49 +102,58 @@ Compute* computer;
 -(id<MTLTexture>) doCompute
 {
     
-    if([_keysPressed containsObject:@13])
+    if([_keysPressed containsObject:@(kVK_ANSI_W)])
     {
         offsetY -= 0.05 * zoom;
     }
-    if ([_keysPressed containsObject:@1])
+    if ([_keysPressed containsObject:@(kVK_ANSI_S)])
     {
         offsetY += 0.05 * zoom;
     }
     
-    if([_keysPressed containsObject:@0])
+    if([_keysPressed containsObject:@(kVK_ANSI_A)])
     {
         offsetX -= 0.05 * zoom;
     }
-    if ([_keysPressed containsObject:@2])
+    if ([_keysPressed containsObject:@(kVK_ANSI_D)])
     {
         offsetX += 0.05 * zoom;
     }
     
-    if([_keysPressed containsObject:@12])
+    if([_keysPressed containsObject:@(kVK_ANSI_Q)])
     {
         zoom *= 1.05;
     }
-    if ([_keysPressed containsObject:@14])
+    if ([_keysPressed containsObject:@(kVK_ANSI_E)])
     {
         zoom *= 0.95;
     }
     
-    if([_keysPressed containsObject:@24])
+    if([_keysPressed containsObject:@(kVK_ANSI_Equal)])
     {
         maxIterMult *= 1.01;
     }
-    if([_keysPressed containsObject:@27])
+    if([_keysPressed containsObject:@(kVK_ANSI_Minus)])
     {
         maxIterMult *= 0.99;
     }
     
-    if([_keysPressed containsObject:@30])
+    if([_keysPressed containsObject:@(kVK_ANSI_RightBracket)])
     {
         escapeThresholdMult *= 1.01;
     }
-    if([_keysPressed containsObject:@33])
+    if([_keysPressed containsObject:@(kVK_ANSI_LeftBracket)])
     {
         escapeThresholdMult *= 0.99;
+    }
+    
+    if([_keysPressed containsObject:@(kVK_ANSI_J)])
+    {
+        colormapShift -= 0.005;
+    }
+    if([_keysPressed containsObject:@(kVK_ANSI_L)])
+    {
+        colormapShift += 0.005;
     }
     
     _commandBuffer = [_commandQueue commandBuffer];
@@ -153,10 +167,14 @@ Compute* computer;
     uint maxIterations = (50 + pow(50 * pow(MAX(0, 1-zoom), 1.5), 1.5)) * maxIterMult;
     float escapeThreshold = 6.0 * escapeThresholdMult;
     
+    colormapShift = MIN(MAX(-0.5, colormapShift), 0.5);
+    
     [_encoder setBytes:&offset length:sizeof(offset) atIndex:0];
     [_encoder setBytes:&zoom length:sizeof(zoom) atIndex:1];
     [_encoder setBytes:&maxIterations length:sizeof(maxIterations) atIndex:2];
     [_encoder setBytes:&escapeThreshold length:sizeof(escapeThreshold) atIndex:3];
+    [_encoder setBytes:&invertColormap length:sizeof(invertColormap) atIndex:4];
+    [_encoder setBytes:&colormapShift length:sizeof(colormapShift) atIndex:5];
 
     
     MTLSize gridSize = MTLSizeMake(_texture.width, _texture.height, 1);
@@ -210,7 +228,7 @@ Compute* computer;
 {
     [_keysPressed removeObject:@(event.keyCode)];
     
-    if(event.keyCode == 49)
+    if(event.keyCode == kVK_Space)
     {
         CGSize initialSize = CGSizeMake(_texture.width, _texture.height);
         _texture = [self textureWithDimensions:_texture.width * 4 height:_texture.height * 4];
@@ -219,6 +237,14 @@ Compute* computer;
         [self saveTextureToImage];
         
         _texture = [self textureWithDimensions:initialSize.width height:initialSize.height];
+    }
+    else if(event.keyCode == kVK_ANSI_I)
+    {
+        invertColormap = !invertColormap;
+    }
+    else if (event.keyCode == kVK_ANSI_K)
+    {
+        colormapShift = 0;
     }
 }
 

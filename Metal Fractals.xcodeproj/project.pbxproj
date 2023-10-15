@@ -29,7 +29,7 @@
 		BE22A5262AD45FE50016A4B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE22A5292AD45FE50016A4B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BE22A52B2AD45FE50016A4B4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		BE22A52D2AD45FE50016A4B4 /* shaders.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = shaders.entitlements; sourceTree = "<group>"; };
+		BE22A52D2AD45FE50016A4B4 /* Metal Fractals.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Metal Fractals.entitlements"; sourceTree = "<group>"; };
 		BE7DF27E2AD5B38F00C21259 /* ComplexNumber.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ComplexNumber.metal; sourceTree = "<group>"; };
 		BE7DF2802AD5BF6000C21259 /* Compute.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Compute.h; sourceTree = "<group>"; };
 		BE7DF2812AD5BF6000C21259 /* Compute.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Compute.m; sourceTree = "<group>"; };
@@ -191,7 +191,7 @@
 				BE22A5262AD45FE50016A4B4 /* Assets.xcassets */,
 				BE22A5282AD45FE50016A4B4 /* Main.storyboard */,
 				BE22A52B2AD45FE50016A4B4 /* main.m */,
-				BE22A52D2AD45FE50016A4B4 /* shaders.entitlements */,
+				BE22A52D2AD45FE50016A4B4 /* Metal Fractals.entitlements */,
 			);
 			path = "Metal Fractals";
 			sourceTree = "<group>";
@@ -549,7 +549,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = shaders/shaders.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "Metal Fractals/Metal Fractals.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -564,8 +565,9 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.willfs.shaders;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.willfs.Metal-Fractals";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 			};
 			name = Debug;
@@ -575,7 +577,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = shaders/shaders.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "Metal Fractals/Metal Fractals.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -590,8 +593,9 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.willfs.shaders;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.willfs.Metal-Fractals";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 			};
 			name = Release;

@@ -40,7 +40,7 @@ struct VertexOut {
     float4 pos [[position]];
 };
 
-float3 doMandelbrot(ComplexNumber<float> c, const uint maxIterations, const float escapeThreshold)
+float4 doMandelbrot(ComplexNumber<float> c, const uint maxIterations, const float escapeThreshold, const bool invertColormap, const float colormapShift)
 {
     uint numIter = 0;
     ComplexNumber<float> z(c.a, c.b);
@@ -48,13 +48,13 @@ float3 doMandelbrot(ComplexNumber<float> c, const uint maxIterations, const floa
     while (numIter < maxIterations && z.sqmag() < escapeThreshold)
     {
         z = z * z + c;
-//        z = pow(z, 3) + icos(isinh(z) * c);
+        z = pow(z, 2) + icos(isin(z) * c);
 //        z = z * z + ComplexNumber<float>(0.0, 0.8);
         numIter++;
     }
     
     if(numIter == maxIterations)
-        return float3(0);
+        return float4(0, 0, 0, 1);
     
     
     
@@ -64,7 +64,8 @@ float3 doMandelbrot(ComplexNumber<float> c, const uint maxIterations, const floa
     
     float i = n / (float)maxIterations;
     
-    return colormap::MATLAB::copper::colormap(i).xyz;
+    return colormap::IDL::Peppermint::colormap(1 * invertColormap - (i + colormapShift) * invertColormap
+                                              + (i + colormapShift) * (!invertColormap));
 }
 
 kernel void mandelbrotShader(texture2d<float, access::write> output [[ texture(0) ]],
@@ -72,7 +73,9 @@ kernel void mandelbrotShader(texture2d<float, access::write> output [[ texture(0
                              device const float2 *offset [[ buffer(0)]],
                              device const float *zoom [[ buffer(1) ]],
                              device const uint* maxIterations [[ buffer(2) ]],
-                             device const float* escapeThreshold [[ buffer(3) ]])
+                             device const float* escapeThreshold [[ buffer(3) ]],
+                             device const bool *invertColormap [[ buffer(4) ]],
+                             device const float *colorMapShift [[ buffer(5) ]])
 {
     
     uint width = output.get_width();
@@ -86,5 +89,5 @@ kernel void mandelbrotShader(texture2d<float, access::write> output [[ texture(0
     float2 uv = float2((pos.x/(float)size - width/size/2) * INITIAL_SCALE * (*zoom) - INITIAL_OFFSET_X + offset->x,
                        (pos.y/(float)size - height/size/2) * INITIAL_SCALE * (*zoom) - INITIAL_OFFSET_Y + offset->y);
         
-    output.write(float4(doMandelbrot(ComplexNumber<float>(uv.x, uv.y), *maxIterations, *escapeThreshold), 1), pos);
+    output.write(doMandelbrot(ComplexNumber<float>(uv.x, uv.y), *maxIterations, *escapeThreshold, *invertColormap, *colorMapShift), pos);
 }
