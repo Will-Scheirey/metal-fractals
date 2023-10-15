@@ -19,7 +19,7 @@
     
     vector_uint2 _viewportSize;
 }
-
+  
 -(id<MTLRenderPipelineState>) buildRenderPipelineWithDevice:(id<MTLDevice>)device withView:(MTKView*)view
 {
     MTLRenderPipelineDescriptor* pipelineDescriptor = [MTLRenderPipelineDescriptor new];

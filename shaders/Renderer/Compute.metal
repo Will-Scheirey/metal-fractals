@@ -67,8 +67,8 @@ float3 palette(int i, const uint maxIterations)
     
     float t = (float)i/maxIterations;
     
-    float3 a = float3(0.3, 0.8, 0.8);
-    float3 b = float3(1., 0.5, 0.5);
+    float3 a = float3(0.5, 0.5, 0.5);
+    float3 b = float3(0.5, 0.5, 0.5);
     float3 c = float3(1.0, 1.0, 1.0);
     float3 d = float3(0.263, 0.416, 0.557);
 

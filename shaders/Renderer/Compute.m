@@ -8,6 +8,9 @@
 #import "Compute.h"
 #import "ShaderDefinitions.h"
 #import <MetalKit/MetalKit.h>
+#import <CoreImage/CoreImage.h>
+#import <UniformTypeIdentifiers/UniformTypeIdentifiers.h>
+
 
 #define TEXTURE_SIZE_MULT 1
 
@@ -22,12 +25,15 @@ Compute* computer;
     id<MTLCommandBuffer> _commandBuffer;
     id<MTLComputeCommandEncoder> _encoder;
     id<MTLTexture> _texture;
+    MTKView* _view;
     
     float zoom;
     float offsetX;
     float offsetY;
     float maxIterMult;
     float escapeThresholdMult;
+    
+    MTLPixelFormat _format;
     
     NSMutableSet* _keysPressed;
 }
@@ -52,7 +58,7 @@ Compute* computer;
 -(id<MTLTexture>) textureWithDimensions:(NSUInteger)width height:(NSUInteger)height
 {
     MTLTextureDescriptor* descriptor = [MTLTextureDescriptor new];
-    descriptor.pixelFormat = MTLPixelFormatBGRA8Unorm;
+    descriptor.pixelFormat = _format;
     descriptor.textureType = MTLTextureType2D;
     
     descriptor.width = width * TEXTURE_SIZE_MULT;
@@ -68,6 +74,8 @@ Compute* computer;
     _device = view.device;
     _commandQueue = [_device newCommandQueue];
     _commandBuffer = [_commandQueue commandBuffer];
+    _format = view.colorPixelFormat;
+    _view = view;
     
     self.pipelineState = [self buildComputePipelineWithDevice:_device];
 
@@ -175,6 +183,24 @@ Compute* computer;
     return _texture;
 }
 
+-(void) saveTextureToImage
+{
+    CIContext *context = [CIContext contextWithMTLDevice:_device];
+    CIImage *ciImage = [[CIImage alloc] initWithMTLTexture:_texture options:@{
+        kCIImageColorSpace: (id)_view.colorspace
+    }];
+    CGAffineTransform transform = CGAffineTransformMake(1, 0, 0, -1, 0, ciImage.extent.size.height);
+    ciImage = [ciImage imageByApplyingTransform:transform];
+    CGImageRef cgImage = [context createCGImage:ciImage fromRect:ciImage.extent];
+    
+    NSURL* path = [NSURL URLWithString:[@"file://" stringByAppendingString: [@"~/Desktop/fractalOutput.PNG" stringByExpandingTildeInPath]]];
+    
+    CGImageDestinationRef dest = CGImageDestinationCreateWithURL((CFURLRef)path , (CFStringRef)UTTypePNG.identifier, 1, nil);
+    CGImageDestinationAddImage(dest, cgImage, nil);
+    CGImageDestinationFinalize(dest);
+    NSLog(@"Saved image to %@", path);
+}
+
 -(void) keyDown:(NSEvent *)event
 {
     [_keysPressed addObject:@(event.keyCode)];
@@ -183,6 +209,17 @@ Compute* computer;
 -(void) keyUp:(NSEvent *)event
 {
     [_keysPressed removeObject:@(event.keyCode)];
+    
+    if(event.keyCode == 49)
+    {
+        CGSize initialSize = CGSizeMake(_texture.width, _texture.height);
+        _texture = [self textureWithDimensions:_texture.width * 4 height:_texture.height * 4];
+        [self doCompute];
+        
+        [self saveTextureToImage];
+        
+        _texture = [self textureWithDimensions:initialSize.width height:initialSize.height];
+    }
 }
 
 -(void) updateSize:(NSSize)size
