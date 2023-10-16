@@ -35,6 +35,7 @@ Compute* computer;
     float escapeThresholdMult;
     bool invertColormap;
     float colormapShift;
+    float contrastPower;
     
     MTLPixelFormat _format;
     
@@ -93,6 +94,7 @@ Compute* computer;
     escapeThresholdMult = 1;
     invertColormap = false;
     colormapShift = 0;
+    contrastPower = 1;
     
     _keysPressed = [NSMutableSet new];
     
@@ -156,6 +158,15 @@ Compute* computer;
         colormapShift += 0.005;
     }
     
+    if([_keysPressed containsObject:@(kVK_ANSI_P)])
+    {
+        contrastPower *= 1.01;
+    }
+    if([_keysPressed containsObject:@(kVK_ANSI_O)])
+    {
+        contrastPower *= 0.99;
+    }
+    
     _commandBuffer = [_commandQueue commandBuffer];
     
     _encoder = [_commandBuffer computeCommandEncoder];
@@ -175,6 +186,7 @@ Compute* computer;
     [_encoder setBytes:&escapeThreshold length:sizeof(escapeThreshold) atIndex:3];
     [_encoder setBytes:&invertColormap length:sizeof(invertColormap) atIndex:4];
     [_encoder setBytes:&colormapShift length:sizeof(colormapShift) atIndex:5];
+    [_encoder setBytes:&contrastPower length:sizeof(contrastPower) atIndex:6];
 
     
     MTLSize gridSize = MTLSizeMake(_texture.width, _texture.height, 1);
@@ -245,6 +257,13 @@ Compute* computer;
     else if (event.keyCode == kVK_ANSI_K)
     {
         colormapShift = 0;
+        contrastPower = 1;
+    }
+    else if (event.keyCode == kVK_ANSI_0)
+    {
+        offsetX = 0;
+        offsetY = 0;
+        zoom = 1;
     }
 }
 

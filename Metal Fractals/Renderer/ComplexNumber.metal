@@ -19,6 +19,14 @@ struct ComplexNumber
         return a*a + b*b;
     }
     
+    T r() const {
+        return sqrt(sqmag());
+    }
+    
+    T theta() const {
+        return atan2(a, b);
+    }
+    
     ComplexNumber<T> operator*(const thread ComplexNumber<T>& other) const {
         return ComplexNumber(a*other.a - b*other.b,
                        a*other.b + b*other.a);
@@ -50,13 +58,22 @@ ComplexNumber<T> pow(ComplexNumber<T> num, float n)
         return num * num * num * num;
     }
      
-    float r = pow(sqrt(num.sqmag()), n);
-    float t = (atan(num.b/num.a)
-               + M_PI_F * (num.a < 0 && num.b >= 0)
-              - M_PI_F * (num.a < 0 && num.b < 0)
-               ) * n;
+    float r = pow(num.r(), n);
+    float t = num.theta() * n;
     
     return ComplexNumber<T>(r * cos(t), r * sin(t));
+}
+
+template<typename T>
+ComplexNumber<T> pow(ComplexNumber<T> num, ComplexNumber<T> power)
+{
+    float ri = num.r();
+    float ti = num.theta();
+    
+    float r = pow(M_E_F, power.a * log(ri) - power.b * ti - 2*M_PI_F*power.b);
+    float theta = power.b * log(ri) + power.a*ti + 2*M_PI_F*power.a;
+    
+    return ComplexNumber<float>(r * sin(theta - M_PI_2_F), r * cos(theta - M_PI_2_F));
 }
 
 
