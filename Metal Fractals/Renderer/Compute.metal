@@ -11,8 +11,8 @@
 #include "ComplexNumber.metal"
 
 #define INITIAL_OFFSET_Y 0
-#define INITIAL_OFFSET_X 0.625
-#define INITIAL_SCALE 2.5
+#define INITIAL_OFFSET_X 0
+#define INITIAL_SCALE 1
 
 
 #define MAX_ITERATIONS 100
@@ -40,31 +40,84 @@ struct VertexOut {
     float4 pos [[position]];
 };
 
-float4 doMandelbrot(ComplexNumber<float> c, const uint maxIterations, const float escapeThreshold, const bool invertColormap, const float colormapShift, float contrastPower)
+float4 doMandelbrot(ComplexNumber<float> c, const uint maxIterations, const float escapeThreshold, const bool invertColormap, const float colormapShift, float contrastPower, const float functionWeight, float cR, float cI, const int fractalIndex)
 {
     uint numIter = 0;
     ComplexNumber<float> z(c.a, c.b);
+    ComplexNumber<float> c1(c.a, c.b);
+    c.a = cR;
+    c.b = cI;
     
     while (numIter < maxIterations && z.sqmag() < escapeThreshold)
     {
-//        z = z * z + c;
-//        z = pow(z, c);
-        z = pow(z, isinh(z + c));
-//        z = z * z + ComplexNumber<float>(0.0, 0.8);
+//        z = pow(ComplexNumber<float>(abs(z.a), abs(z.b)), 2) + c;
+        
+//        z = pow(z, 2) + c;
+
+        
+//        z = (pow(z, 2) + c) * functionWeight + (pow(z, 2) + c1) * (1 - functionWeight);
+
+        z = pow(z, 2) + c1;
+        
+        /*
+        if(fractalIndex == 0)
+        {
+            z = (pow(z, 2) + c);
+        }
+        else if(fractalIndex == 1)
+        {
+            z = (pow(z, 2) + c) * functionWeight + (pow(z, 2) + c1) * (1 - functionWeight);
+        }
+        else
+        {
+        }
+         */
+         
+//        z = (pow(z, ComplexNumber<float>(2, 0)) + c) * functionWeight + (pow(z, ComplexNumber<float>(3, 0)) + c) * (1 - functionWeight);
+//        z =
+//        z = pow(cos(z), sinh(z + c));
+        
+
+//        z = ComplexNumber<float>(fmod(z.a, z.b), fmod(z.b, z.a)) * z + ComplexNumber<float>(0.0, 0.8);
         numIter++;
     }
     
     if(numIter == maxIterations)
+    {
         return float4(0, 0, 0, 1);
+    }
     
     float smoothed = log2(log2(z.a * z.a + z.b * z.b) / 2.0) / log(2.0);
     
     float n = numIter + 1 - smoothed;
     
     float i = n / (float)maxIterations;
+
+    return colormap::IDL::Black_White_Linear::colormap(pow(1 * invertColormap - (i + colormapShift) * invertColormap
+                                                + (i + colormapShift) * (!invertColormap), contrastPower));
     
-    return colormap::IDL::Peppermint::colormap(pow(1 * invertColormap - (i + colormapShift) * invertColormap
-                                              + (i + colormapShift) * (!invertColormap), contrastPower));
+    /*
+    if(fractalIndex == 1)
+    {
+        
+        float4 color2 = colormap::IDL::Black_White_Linear::colormap(pow(1 * 0 - (i + colormapShift) * 0
+                                                                        + (i + colormapShift) * (!0), contrastPower));
+        float4 color1 = colormap::IDL::CB_PiYG::colormap(pow(1 * invertColormap - (i + colormapShift) * invertColormap
+                                                             + (i + colormapShift) * (!invertColormap), contrastPower));
+        
+        return color1 * functionWeight + color2 * (1 - functionWeight);
+    }
+    else if(fractalIndex == 0)
+    {
+        return colormap::IDL::CB_PiYG::colormap(pow(1 * invertColormap - (i + colormapShift) * invertColormap
+                                                               + (i + colormapShift) * (!invertColormap), contrastPower));
+    }
+    else
+    {
+        return colormap::IDL::Black_White_Linear::colormap(pow(1 * 0 - (i + colormapShift) * 0
+                                                               + (i + colormapShift) * (!0), contrastPower));
+    }
+     */
 }
 
 kernel void mandelbrotShader(texture2d<float, access::write> output [[ texture(0) ]],
@@ -75,7 +128,12 @@ kernel void mandelbrotShader(texture2d<float, access::write> output [[ texture(0
                              device const float* escapeThreshold [[ buffer(3) ]],
                              device const bool *invertColormap [[ buffer(4) ]],
                              device const float *colorMapShift [[ buffer(5) ]],
-                             device const float *contrastPower [[ buffer(6) ]])
+                             device const float *contrastPower [[ buffer(6) ]],
+                             device const float *functionWeight [[ buffer(7) ]],
+                             device const float *cR [[ buffer(8) ]],
+                             device const float *cI [[ buffer(9) ]],
+                             device const int *fractalIndex [[ buffer(10) ]]
+                             )
 {
     
     uint width = output.get_width();
@@ -89,5 +147,5 @@ kernel void mandelbrotShader(texture2d<float, access::write> output [[ texture(0
     float2 uv = float2((pos.x/(float)size - width/size/2) * INITIAL_SCALE * (*zoom) - INITIAL_OFFSET_X + offset->x,
                        (pos.y/(float)size - height/size/2) * INITIAL_SCALE * (*zoom) - INITIAL_OFFSET_Y + offset->y);
     
-    output.write(doMandelbrot(ComplexNumber<float>(uv.x, uv.y), *maxIterations, *escapeThreshold, *invertColormap, *colorMapShift, *contrastPower), pos);
+    output.write(doMandelbrot(ComplexNumber<float>(uv.x, uv.y), *maxIterations, *escapeThreshold, *invertColormap, *colorMapShift, *contrastPower, *functionWeight, *cR, *cI, *fractalIndex), pos);
 }

@@ -20,12 +20,12 @@
     
     
     
-    [self.view setFrameSize:NSMakeSize(800, 800)];
+    [self.view setFrameSize:NSMakeSize(1600, 900)];
 
     _view = (MTKView *)self.view;
     
     _view.device = MTLCreateSystemDefaultDevice();
-    _view.preferredFramesPerSecond = 60;
+    _view.preferredFramesPerSecond = 120;
     
     CGSize size = _view.bounds.size;
     

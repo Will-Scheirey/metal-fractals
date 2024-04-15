@@ -17,5 +17,53 @@
             stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3955947D-56A2-4888-9F37-3B2CF9871395"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Metal Fractals/Renderer/Compute.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "410"
+            endingLineNumber = "410"
+            landmarkName = "-initWitMTK:size:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3955947D-56A2-4888-9F37-3B2CF9871395 - 9ecae878cfb91552"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[Compute initWitMTK:size:]"
+                  moduleName = "Metal Fractals"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/will/Documents/Xcode%20Projects/shaders/shaders/Metal%20Fractals/Renderer/Compute.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "408"
+                  endingLineNumber = "408"
+                  offsetFromSymbolStart = "5272">
+               </Location>
+               <Location
+                  uuid = "3955947D-56A2-4888-9F37-3B2CF9871395 - 9ecae878cfb91552"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[Compute initWitMTK:size:]"
+                  moduleName = "Metal Fractals"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/will/Documents/Xcode%20Projects/shaders/shaders/Metal%20Fractals/Renderer/Compute.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "408"
+                  endingLineNumber = "408"
+                  offsetFromSymbolStart = "5256">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

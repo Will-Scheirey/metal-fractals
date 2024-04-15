@@ -80,25 +80,25 @@ ComplexNumber<T> pow(ComplexNumber<T> num, ComplexNumber<T> power)
 // Trig
 
 template<typename T>
-ComplexNumber<T> isin(ComplexNumber<T> num)
+ComplexNumber<T> sin(ComplexNumber<T> num)
 {
     return ComplexNumber<T>(sin(num.a) * cosh(num.b), -cos(num.a)*sinh(num.b));
 }
 
 template<typename T>
-ComplexNumber<T> icos(ComplexNumber<T> num)
+ComplexNumber<T> cos(ComplexNumber<T> num)
 {
     return ComplexNumber<T>(cos(num.a) * cosh(num.b), -sin(num.a)*sinh(num.b));
 }
 
 template<typename T>
-ComplexNumber<T> isinh(ComplexNumber<T> num)
+ComplexNumber<T> sinh(ComplexNumber<T> num)
 {
     return ComplexNumber<T>(sinh(num.a) * cos(num.b), cosh(num.a)*sin(num.b));
 }
 
 template<typename T>
-ComplexNumber<T> icosh(ComplexNumber<T> num)
+ComplexNumber<T> cosh(ComplexNumber<T> num)
 {
     return ComplexNumber<T>(cosh(num.a) * cos(num.b), sinh(num.a)*sin(num.b));
 }
