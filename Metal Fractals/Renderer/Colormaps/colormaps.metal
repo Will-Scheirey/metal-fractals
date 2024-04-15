@@ -1,3 +1,5 @@
+// Colormaps from https://github.com/kbinani/colormap-shaders
+
 #include "IDL_CB-BrBG.metal"
 #include "IDL_CB-YIGn.metal"
 #include "IDL_Blue_Waves.metal"
